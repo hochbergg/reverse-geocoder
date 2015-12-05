@@ -49,6 +49,7 @@ RG_COLUMNS = [
     'lat',
     'lon',
     'name',
+    'geonameid',
     'admin1',
     'admin2',
     'cc'
@@ -144,6 +145,7 @@ class RGeocoder:
                 lat = row[GN_COLUMNS['latitude']]
                 lon = row[GN_COLUMNS['longitude']]
                 name = row[GN_COLUMNS['asciiName']]
+                geonameid = row[GN_COLUMNS['geoNameId']]
                 cc = row[GN_COLUMNS['countryCode']]
 
                 admin1_c = row[GN_COLUMNS['admin1Code']]
@@ -160,7 +162,7 @@ class RGeocoder:
                 if cc_admin2 in admin2_map:
                     admin2 = admin2_map[cc_admin2]
 
-                write_row = {'lat':lat,'lon':lon,'name':name,'admin1':admin1,'admin2':admin2,'cc':cc}
+                write_row = {'lat':lat,'lon':lon,'name':name,'geonameid':geonameid,'admin1':admin1,'admin2':admin2,'cc':cc}
                 rows.append(write_row)
             writer.writeheader()
             writer.writerows(rows)

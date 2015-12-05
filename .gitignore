@@ -25,3 +25,7 @@ CMakeCache.txt
 main
 Makefile
 libreverse_geocode.a
+
+# IntelliJ Files #
+##################
+.idea
